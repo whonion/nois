@@ -1,2 +1,2 @@
 NOIS Setup full-node by one command
-<code>wget https://raw.githubusercontent.com/whonion/nois/main/nois_setup.sh && chmod +x nois_setup.sh && ./nois_setup.sh</code>
+wget https://raw.githubusercontent.com/whonion/nois/main/nois_setup.sh && chmod +x nois_setup.sh && ./nois_setup.sh</code>
