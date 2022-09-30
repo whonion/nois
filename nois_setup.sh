@@ -17,7 +17,7 @@ noisd version --long | head && \
 # commit: 288609255ad92dfe5c54eae572fe7d6010e712eb
 noisd init whonion --chain-id nois-testnet-002 && \
 wget -O $HOME/.noisd/config/genesis.json "https://raw.githubusercontent.com/noislabs/testnets/main/nois-testnet-002/genesis.json" && \
-cd && cat .noisd/data/priv_validator_state.json && \
+#cd && cat .noisd/data/priv_validator_state.json && \
 noisd config chain-id nois-testnet-002 && \
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.025unois\"/;" ~/.noisd/config/app.toml && \
 # add seeds/bpeers/peers в config.toml && \
@@ -25,7 +25,7 @@ external_address=$(wget -qO- eth0.me) && \
 sed -i.bak -e "s/^external_address *=.*/external_address = \"$external_address:26656\"/" $HOME/.noisd/config/config.toml && \
 peers="a1222dfb8641e0cb55615b75e0122d5695be1f35@node-0.noislabs.com:26656,2df500525826199afc25665ee7cc45ceb86d68d7@node-1.noislabs.com:26656,61be6aa87471196757ea0f7b1d7897e97b4e09c2@node-2.noislabs.com:26656,cf16671c00eec9a9a047a5c6aa8510cb681b64b8@node-3.noislabs.com:26656" && \
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$peers\"/" $HOME/.noisd/config/config.toml && \
-#bpeers="" && \
+bpeers="" && \
 #sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$bpeers\"/" $HOME/.noisd/config/config.toml && \
 seeds="" && \
 sed -i.bak -e "s/^seeds =.*/seeds = \"$seeds\"/" $HOME/.noisd/config/config.toml && \
